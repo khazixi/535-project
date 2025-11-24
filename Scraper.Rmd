@@ -17,9 +17,10 @@ library(gender)
 
 ```{r}
 # This data was the least complicated to scrape so I scraped it, the other stats I ended up pulling from this github: https://github.com/komaksym/UFC-DataLab
+# It was a little tough getting the correct URL syntax to do the pulls
 base_url = "http://www.ufcstats.com/statistics/fighters?page=all&char="
 
-url_list = map(letters, ~ paste0(base_url,.x))
+url_list = map(letters, ~ paste0(base_url, .x))
 
 
 # This should map all the data to rows
@@ -43,4 +44,6 @@ scrape_player_stats = function(urls) {
 
 scorecards = read_csv('scorecards.csv')
 processed_stats = read_csv('processed_stats.csv')
+
+# I think all the analysis work can be done from this but I don't really know how you'd begin
 ```
